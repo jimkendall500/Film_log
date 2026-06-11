@@ -1,1561 +1,971 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="Film Log">
-    <meta name="theme-color" content="#0f0f0f">
-    <link rel="apple-touch-icon" href="data:image/png;base64,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">
-    <style>
-        :root {
-            --bg: #0f0f0f;
-            --surface: #1a1a1a;
-            --surface2: #242424;
-            --border: #333;
-            --accent: #c8a96e;
-            --accent-dim: rgba(200, 169, 110, 0.15);
-            --text: #e8e4dc;
-            --text-muted: #888;
-            --danger: #c0392b;
-            --success: #27ae60;
-            --frame-unexposed: #1a1a1a;
-            --frame-exposed: #2a2416;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-
-        body {
-            font-family: 'Helvetica Neue', Helvetica, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            min-height: 100vh;
-            min-height: -webkit-fill-available;
-            overflow-x: hidden;
-        }
-
-        /* ── NAV ── */
-        .nav {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 16px;
-            padding-top: max(14px, env(safe-area-inset-top));
-            z-index: 100;
-        }
-
-        .nav-title {
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--accent);
-        }
-
-        .nav-roll {
-            font-size: 12px;
-            color: var(--text-muted);
-            letter-spacing: 0.05em;
-        }
-
-        .nav-btn {
-            background: none;
-            border: 1px solid var(--border);
-            color: var(--text-muted);
-            padding: 6px 12px;
-            font-size: 11px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .nav-btn:active { background: var(--surface2); }
-
-        /* ── MAIN LAYOUT ── */
-        .main {
-            padding-top: 80px;
-            padding-bottom: 100px;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ── SCREENS ── */
-        .screen { display: none; }
-        .screen.active { display: block; }
-
-        /* ── ROLL SETUP ── */
-        .setup-card {
-            margin: 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .setup-card-header {
-            padding: 14px 16px;
-            background: var(--surface2);
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .field-row {
-            display: flex;
-            align-items: center;
-            padding: 0 16px;
-            border-bottom: 1px solid var(--border);
-            min-height: 52px;
-        }
-
-        .field-row:last-child { border-bottom: none; }
-
-        .field-label {
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            width: 110px;
-            flex-shrink: 0;
-        }
-
-        .field-input {
-            flex: 1;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 15px;
-            padding: 14px 0;
-            outline: none;
-            font-family: inherit;
-        }
-
-        .field-input::placeholder { color: var(--border); }
-
-        select.field-input {
-            appearance: none;
-            -webkit-appearance: none;
-            cursor: pointer;
-        }
-
-        .select-arrow {
-            color: var(--text-muted);
-            font-size: 10px;
-            pointer-events: none;
-        }
-
-        .big-btn {
-            display: block;
-            width: calc(100% - 32px);
-            margin: 16px;
-            padding: 18px;
-            background: var(--accent);
-            color: #0f0f0f;
-            border: none;
-            font-size: 12px;
-            font-weight: 800;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 3px;
-            transition: opacity 0.15s;
-        }
-
-        .big-btn:active { opacity: 0.8; }
-
-        .big-btn.secondary {
-            background: var(--surface2);
-            color: var(--text);
-            border: 1px solid var(--border);
-        }
-
-        /* ── FRAME STRIP ── */
-        .strip-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 12px 16px;
-            position: sticky;
-            top: 55px;
-            background: var(--bg);
-            border-bottom: 1px solid var(--border);
-            z-index: 50;
-        }
-
-        .strip-progress {
-            font-size: 11px;
-            color: var(--text-muted);
-            letter-spacing: 0.06em;
-        }
-
-        .strip-progress span {
-            color: var(--accent);
-            font-weight: 700;
-        }
-
-        .quick-log-btn {
-            background: var(--accent);
-            color: #0f0f0f;
-            border: none;
-            padding: 10px 18px;
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .quick-log-btn:active { opacity: 0.8; }
-
-        .frame-list {
-            padding: 8px 16px 16px;
-        }
-
-        .frame-card {
-            background: var(--frame-unexposed);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            margin-bottom: 8px;
-            overflow: hidden;
-            transition: border-color 0.2s;
-            cursor: pointer;
-        }
-
-        .frame-card.exposed {
-            background: var(--frame-exposed);
-            border-color: rgba(200, 169, 110, 0.3);
-        }
-
-        .frame-card-header {
-            display: flex;
-            align-items: center;
-            padding: 12px 14px;
-            gap: 12px;
-        }
-
-        .frame-number {
-            font-size: 11px;
-            font-weight: 800;
-            letter-spacing: 0.1em;
-            color: var(--text-muted);
-            width: 28px;
-            flex-shrink: 0;
-        }
-
-        .frame-card.exposed .frame-number {
-            color: var(--accent);
-        }
-
-        .frame-summary {
-            flex: 1;
-            font-size: 13px;
-            color: var(--text-muted);
-            font-style: italic;
-        }
-
-        .frame-card.exposed .frame-summary {
-            color: var(--text);
-            font-style: normal;
-        }
-
-        .frame-chevron {
-            color: var(--border);
-            font-size: 12px;
-            transition: transform 0.2s;
-        }
-
-        .frame-card.open .frame-chevron {
-            transform: rotate(90deg);
-        }
-
-        .frame-detail {
-            display: none;
-            padding: 0 14px 14px;
-            border-top: 1px solid var(--border);
-        }
-
-        .frame-card.open .frame-detail { display: block; }
-
-        .detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 12px;
-        }
-
-        .detail-field {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .detail-field.full-width {
-            grid-column: 1 / -1;
-        }
-
-        .detail-label {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .detail-input {
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            color: var(--text);
-            font-size: 15px;
-            padding: 10px 10px;
-            outline: none;
-            font-family: inherit;
-            width: 100%;
-            -webkit-appearance: none;
-        }
-
-        .detail-input:focus {
-            border-color: var(--accent);
-        }
-
-        select.detail-input {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            padding-right: 28px;
-            cursor: pointer;
-        }
-
-        .frame-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 12px;
-        }
-
-        .frame-btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .frame-btn.save {
-            background: var(--accent);
-            color: #0f0f0f;
-        }
-
-        .frame-btn.gps {
-            background: var(--surface2);
-            color: var(--text);
-            border: 1px solid var(--border);
-            flex: 0 0 auto;
-            padding: 12px 14px;
-        }
-
-        .frame-btn.clear {
-            background: none;
-            color: var(--danger);
-            border: 1px solid var(--danger);
-            flex: 0 0 auto;
-        }
-
-        .gps-indicator {
-            font-size: 9px;
-            color: var(--success);
-            margin-top: 4px;
-            letter-spacing: 0.05em;
-        }
-
-        /* ── QUICK LOG MODAL ── */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.85);
-            z-index: 200;
-            align-items: flex-end;
-        }
-
-        .modal-overlay.open { display: flex; }
-
-        .modal {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            border-radius: 12px 12px 0 0;
-            width: 100%;
-            padding: 20px 16px;
-            padding-bottom: max(20px, env(safe-area-inset-bottom));
-            animation: slideUp 0.25s ease;
-        }
-
-        @keyframes slideUp {
-            from { transform: translateY(100%); }
-            to { transform: translateY(0); }
-        }
-
-        .modal-title {
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            text-align: center;
-        }
-
-        .modal-frame-number {
-            color: var(--accent);
-        }
-
-        .quick-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .quick-field {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .quick-label {
-            font-size: 9px;
-            font-weight: 700;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--text-muted);
-        }
-
-        .quick-input {
-            background: var(--surface2);
-            border: 1px solid var(--border);
-            border-radius: 3px;
-            color: var(--text);
-            font-size: 16px;
-            padding: 12px 10px;
-            outline: none;
-            font-family: inherit;
-            width: 100%;
-            -webkit-appearance: none;
-        }
-
-        .quick-input:focus { border-color: var(--accent); }
-
-        select.quick-input {
-            appearance: none;
-            -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 10px center;
-            padding-right: 28px;
-            cursor: pointer;
-        }
-
-        .quick-note {
-            grid-column: 1 / -1;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 4px;
-        }
-
-        .modal-btn {
-            flex: 1;
-            padding: 14px;
-            border: none;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .modal-btn.save { background: var(--accent); color: #0f0f0f; }
-        .modal-btn.cancel { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
-        .modal-btn.gps-btn { flex: 0 0 auto; background: var(--surface2); color: var(--text); border: 1px solid var(--border); padding: 14px; }
-
-        /* ── ROLLS SCREEN ── */
-        .rolls-list { padding: 16px; }
-
-        .roll-item {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            padding: 16px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            transition: border-color 0.2s;
-        }
-
-        .roll-item:active { border-color: var(--accent); }
-
-        .roll-item-info {}
-
-        .roll-item-name {
-            font-size: 15px;
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-
-        .roll-item-meta {
-            font-size: 11px;
-            color: var(--text-muted);
-            letter-spacing: 0.04em;
-        }
-
-        .roll-item-frames {
-            font-size: 11px;
-            color: var(--accent);
-            font-weight: 700;
-            text-align: right;
-        }
-
-        .roll-item-actions {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-
-        .delete-btn {
-            background: none;
-            border: 1px solid var(--danger);
-            color: var(--danger);
-            width: 30px;
-            height: 30px;
-            border-radius: 3px;
-            font-size: 14px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        /* ── EXPORT SCREEN ── */
-        .export-card {
-            margin: 16px;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-
-        .export-option {
-            padding: 20px 16px;
-            border-bottom: 1px solid var(--border);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            transition: background 0.15s;
-        }
-
-        .export-option:last-child { border-bottom: none; }
-        .export-option:active { background: var(--surface2); }
-
-        .export-icon {
-            font-size: 24px;
-            width: 40px;
-            text-align: center;
-        }
-
-        .export-info {}
-
-        .export-name {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 3px;
-        }
-
-        .export-desc {
-            font-size: 11px;
-            color: var(--text-muted);
-            line-height: 1.4;
-        }
-
-        /* ── BOTTOM TAB BAR ── */
-        .tabbar {
-            position: fixed;
-            bottom: 0; left: 0; right: 0;
-            background: var(--bg);
-            border-top: 1px solid var(--border);
-            display: flex;
-            padding-bottom: env(safe-area-inset-bottom);
-            z-index: 100;
-        }
-
-        .tab {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3px;
-            padding: 10px 0;
-            cursor: pointer;
-            background: none;
-            border: none;
-            color: var(--text-muted);
-            transition: color 0.15s;
-        }
-
-        .tab.active { color: var(--accent); }
-
-        .tab-icon { font-size: 20px; }
-        .tab-label { font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-
-        /* ── EMPTY STATE ── */
-        .empty-state {
-            text-align: center;
-            padding: 60px 32px;
-            color: var(--text-muted);
-        }
-
-        .empty-state-icon { font-size: 48px; margin-bottom: 16px; }
-        .empty-state-title { font-size: 16px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
-        .empty-state-text { font-size: 13px; line-height: 1.6; }
-
-        /* ── TOAST ── */
-        .toast {
-            position: fixed;
-            top: 80px;
-            left: 50%;
-            transform: translateX(-50%) translateY(-20px);
-            background: var(--accent);
-            color: #0f0f0f;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            opacity: 0;
-            transition: all 0.3s;
-            z-index: 300;
-            pointer-events: none;
-            white-space: nowrap;
-        }
-
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        /* ── CONFIRM DIALOG ── */
-        .confirm-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.85);
-            z-index: 400;
-            align-items: center;
-            justify-content: center;
-            padding: 32px;
-        }
-
-        .confirm-overlay.open { display: flex; }
-
-        .confirm-box {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 24px;
-            width: 100%;
-            max-width: 320px;
-        }
-
-        .confirm-title {
-            font-size: 16px;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .confirm-text {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.5;
-            margin-bottom: 20px;
-        }
-
-        .confirm-actions {
-            display: flex;
-            gap: 10px;
-        }
-
-        .confirm-btn {
-            flex: 1;
-            padding: 12px;
-            border: none;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            cursor: pointer;
-            border-radius: 3px;
-        }
-
-        .confirm-btn.danger { background: var(--danger); color: white; }
-        .confirm-btn.cancel { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Film Log">
+<meta name="theme-color" content="#101010">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-192.png">
+<title>Film Log</title>
+<style>
+:root{
+  --bg:#101010;
+  --bg2:#161616;
+  --surface:#1d1d1d;
+  --surface2:#262626;
+  --surface3:#2f2f2f;
+  --border:#333;
+  --border2:#444;
+  --amber:#d9a55a;
+  --amber-dim:rgba(217,165,90,.12);
+  --amber-glow:rgba(217,165,90,.35);
+  --red:#cf5b4e;
+  --green:#6fae7d;
+  --blue:#6d9bbf;
+  --text:#ece7dd;
+  --muted:#9a958c;
+  --faint:#5d5a54;
+  --mono:'SF Mono',ui-monospace,'Cascadia Mono',Menlo,Consolas,monospace;
+  --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{height:100%}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--text);
+  min-height:100%;
+  overscroll-behavior-y:none;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 90% 50% at 50% -10%, rgba(217,165,90,.05), transparent 60%);
+}
+
+/* ───────── HEADER ───────── */
+.hdr{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(16,16,16,.92);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+  padding-top:env(safe-area-inset-top);
+}
+.hdr-in{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;max-width:640px;margin:0 auto}
+.brand{display:flex;align-items:center;gap:9px}
+.brand-mark{
+  width:26px;height:26px;border-radius:6px;flex-shrink:0;
+  background:linear-gradient(145deg,var(--amber),#a5763a);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 14px rgba(217,165,90,.25);
+}
+.brand-mark svg{width:15px;height:15px}
+.brand-txt{font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase}
+.hdr-ctx{font-family:var(--mono);font-size:10.5px;color:var(--muted);letter-spacing:.04em;text-align:right;max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+/* ───────── LAYOUT ───────── */
+.main{max-width:640px;margin:0 auto;padding:calc(58px + env(safe-area-inset-top)) 0 calc(86px + env(safe-area-inset-bottom));position:relative;z-index:1}
+.screen{display:none;animation:fadein .18s ease}
+.screen.active{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+
+.pg-head{padding:22px 18px 6px}
+.pg-title{font-size:24px;font-weight:300;letter-spacing:-.01em}
+.pg-sub{font-size:13px;color:var(--muted);margin-top:5px;line-height:1.5}
+
+/* ───────── CARDS & FIELDS ───────── */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:14px 14px 0;overflow:hidden}
+.card-h{padding:11px 16px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border);background:var(--bg2)}
+.frow{display:flex;align-items:center;min-height:50px;padding:0 16px;border-bottom:1px solid var(--border);gap:10px}
+.frow:last-child{border-bottom:none}
+.flabel{font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);width:104px;flex-shrink:0}
+.fin{flex:1;background:none;border:none;color:var(--text);font-size:16px;padding:13px 0;outline:none;font-family:inherit;min-width:0}
+.fin::placeholder{color:var(--faint)}
+select.fin{appearance:none;-webkit-appearance:none;cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239a958c'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 2px center;padding-right:20px}
+
+.btn{
+  display:block;width:calc(100% - 28px);margin:16px 14px 0;padding:16px;
+  background:linear-gradient(145deg,var(--amber),#b8853f);color:#141414;border:none;border-radius:10px;
+  font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;
+  transition:transform .12s,box-shadow .12s;font-family:inherit;
+}
+.btn:active{transform:scale(.985);box-shadow:0 0 18px var(--amber-glow)}
+.btn.ghost{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
+.btn.danger-ghost{background:none;color:var(--red);border:1px solid var(--red)}
+
+/* ───────── ACTIVE ROLL DASH ───────── */
+.dash{margin:14px;border-radius:14px;border:1px solid var(--border);background:linear-gradient(170deg,var(--surface),var(--bg2));padding:18px 16px 14px;position:relative;overflow:hidden}
+.dash::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--amber),transparent);opacity:.6}
+.dash-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.dash-name{font-size:18px;font-weight:600;letter-spacing:-.01em}
+.dash-meta{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:5px;line-height:1.7}
+.dash-meta b{color:var(--amber);font-weight:600}
+.status-pill{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:5px 10px;border-radius:99px;flex-shrink:0;border:1px solid}
+.st-shooting{color:var(--amber);border-color:var(--amber);background:var(--amber-dim)}
+.st-finished{color:var(--blue);border-color:var(--blue);background:rgba(109,155,191,.1)}
+.st-developed{color:var(--green);border-color:var(--green);background:rgba(111,174,125,.1)}
+.st-scanned{color:var(--muted);border-color:var(--border2);background:var(--surface2)}
+.dash-bar{height:5px;background:var(--surface3);border-radius:99px;margin-top:14px;overflow:hidden}
+.dash-fill{height:100%;background:linear-gradient(90deg,#9a6f33,var(--amber));border-radius:99px;transition:width .4s ease;box-shadow:0 0 8px var(--amber-glow)}
+.dash-count{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:7px}
+.dash-count b{color:var(--text)}
+.dash-actions{display:flex;gap:8px;margin-top:14px}
+.dash-btn{flex:1;padding:13px 8px;border-radius:9px;border:none;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;transition:transform .1s}
+.dash-btn:active{transform:scale(.97)}
+.dash-btn.primary{background:linear-gradient(145deg,var(--amber),#b8853f);color:#141414}
+.dash-btn.repeat{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
+.dash-btn.repeat small{display:block;font-size:8.5px;font-weight:600;letter-spacing:.05em;color:var(--muted);text-transform:none;margin-top:2px}
+.dash-btn:disabled{opacity:.35;pointer-events:none}
+
+/* ───────── FRAME LIST ───────── */
+.flist{padding:6px 14px 0}
+.fl-head{display:flex;justify-content:space-between;align-items:center;padding:14px 4px 8px}
+.fl-title{font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.fl-filter{display:flex;gap:6px}
+.fl-fbtn{background:none;border:1px solid var(--border);color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.06em;padding:5px 10px;border-radius:99px;cursor:pointer;font-family:inherit}
+.fl-fbtn.on{color:var(--amber);border-color:var(--amber);background:var(--amber-dim)}
+
+.fcard{background:var(--surface);border:1px solid var(--border);border-radius:10px;margin-bottom:7px;overflow:hidden;transition:border-color .15s}
+.fcard.exposed{border-color:rgba(217,165,90,.35);background:linear-gradient(160deg,#221c12,var(--surface) 55%)}
+.fcard-h{display:flex;align-items:center;padding:12px 13px;gap:11px;cursor:pointer}
+.fnum{font-family:var(--mono);font-size:12px;font-weight:700;color:var(--faint);width:26px;flex-shrink:0}
+.fcard.exposed .fnum{color:var(--amber)}
+.fsum{flex:1;font-size:12.5px;color:var(--faint);font-style:italic;overflow:hidden;min-width:0}
+.fcard.exposed .fsum{color:var(--text);font-style:normal}
+.fsum .set{font-family:var(--mono);font-size:12px;letter-spacing:.01em}
+.fsum .nt{display:block;font-size:11px;color:var(--muted);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fchev{color:var(--faint);font-size:10px;transition:transform .18s;flex-shrink:0}
+.fcard.open .fchev{transform:rotate(90deg)}
+.fgps{font-size:10px;flex-shrink:0}
+.fdetail{display:none;padding:2px 13px 13px;border-top:1px solid var(--border)}
+.fcard.open .fdetail{display:block}
+
+.dgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:11px}
+.dfield{display:flex;flex-direction:column;gap:4px}
+.dfield.full{grid-column:1/-1}
+.dlabel{font-size:9px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.din{background:var(--surface2);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:15px;padding:10px;outline:none;font-family:inherit;width:100%;-webkit-appearance:none}
+.din:focus{border-color:var(--amber)}
+select.din{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%239a958c'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;padding-right:26px;cursor:pointer}
+.factions{display:flex;gap:7px;margin-top:11px}
+.fbtn{flex:1;padding:12px;border:none;border-radius:8px;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.fbtn.save{background:linear-gradient(145deg,var(--amber),#b8853f);color:#141414}
+.fbtn.gps{background:var(--surface2);color:var(--text);border:1px solid var(--border2);flex:0 0 auto;padding:12px 13px}
+.fbtn.clear{background:none;color:var(--red);border:1px solid rgba(207,91,78,.5);flex:0 0 auto;padding:12px 13px}
+.addframe{display:block;width:100%;padding:13px;background:none;border:1px dashed var(--border2);border-radius:10px;color:var(--muted);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:inherit;margin:4px 0 10px}
+
+/* ───────── CHIP PICKERS ───────── */
+.chiprow{display:flex;gap:6px;overflow-x:auto;padding:4px 1px 6px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.chiprow::-webkit-scrollbar{display:none}
+.chip{
+  flex:0 0 auto;padding:9px 13px;border-radius:8px;border:1px solid var(--border2);
+  background:var(--surface2);color:var(--text);font-family:var(--mono);font-size:13px;
+  cursor:pointer;transition:all .1s;user-select:none;-webkit-user-select:none;
+}
+.chip.on{background:var(--amber);border-color:var(--amber);color:#141414;font-weight:700;box-shadow:0 0 10px var(--amber-glow)}
+.chip.none{font-family:var(--sans);font-size:11px;color:var(--muted)}
+
+/* ───────── SHEET (modal) ───────── */
+.sheet-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;align-items:flex-end}
+.sheet-ov.open{display:flex}
+.sheet{
+  background:var(--bg2);border-top:1px solid var(--border2);border-radius:18px 18px 0 0;width:100%;
+  max-width:640px;margin:0 auto;padding:10px 16px;padding-bottom:max(18px,env(safe-area-inset-bottom));
+  animation:up .22s cubic-bezier(.2,.9,.3,1);max-height:88vh;overflow-y:auto;
+}
+@keyframes up{from{transform:translateY(100%)}to{transform:none}}
+.sheet-grab{width:36px;height:4px;border-radius:99px;background:var(--border2);margin:2px auto 12px}
+.sheet-title{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);text-align:center;margin-bottom:14px}
+.sheet-title b{color:var(--amber)}
+.qlabel{font-size:9px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:12px 0 5px}
+.qin{background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:16px;padding:12px;outline:none;font-family:inherit;width:100%;-webkit-appearance:none}
+.qin:focus{border-color:var(--amber)}
+.q2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.gpsline{font-family:var(--mono);font-size:10px;color:var(--green);margin-top:8px;min-height:13px}
+.sheet-actions{display:flex;gap:8px;margin-top:16px}
+.sbtn{flex:1;padding:15px;border:none;border-radius:9px;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.sbtn.save{background:linear-gradient(145deg,var(--amber),#b8853f);color:#141414}
+.sbtn.cancel{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
+.sbtn.icon{flex:0 0 auto;background:var(--surface2);color:var(--text);border:1px solid var(--border2);padding:15px 16px}
+
+/* ───────── ROLLS ───────── */
+.search{margin:14px 14px 0;position:relative}
+.search input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:10px;color:var(--text);font-size:15px;padding:12px 13px 12px 36px;outline:none;font-family:inherit;-webkit-appearance:none}
+.search input:focus{border-color:var(--amber)}
+.search svg{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:15px;height:15px;opacity:.45}
+.statusbar{display:flex;gap:6px;overflow-x:auto;padding:12px 14px 2px;scrollbar-width:none}
+.statusbar::-webkit-scrollbar{display:none}
+.roll{background:var(--surface);border:1px solid var(--border);border-radius:12px;margin:10px 14px 0;overflow:hidden;position:relative}
+.roll.activeroll{border-color:rgba(217,165,90,.5)}
+.roll-strip{position:absolute;left:0;top:0;bottom:0;width:4px}
+.roll-body{padding:14px 14px 12px 18px;cursor:pointer}
+.roll-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.roll-name{font-size:15px;font-weight:600}
+.roll-meta{font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:4px;line-height:1.7}
+.roll-bar{height:3px;background:var(--surface3);border-radius:99px;margin-top:10px;overflow:hidden}
+.roll-fill{height:100%;background:var(--amber);border-radius:99px}
+.roll-foot{display:flex;justify-content:space-between;align-items:center;padding:9px 14px 9px 18px;border-top:1px solid var(--border);background:var(--bg2)}
+.roll-count{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.roll-count b{color:var(--amber)}
+.roll-acts{display:flex;gap:6px}
+.racts{background:none;border:1px solid var(--border2);color:var(--muted);font-size:10px;font-weight:700;letter-spacing:.06em;padding:6px 10px;border-radius:7px;cursor:pointer;font-family:inherit}
+.racts.del{color:var(--red);border-color:rgba(207,91,78,.5)}
+
+/* ───────── GEAR / SETTINGS ───────── */
+.gear-item{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--border);gap:10px}
+.gear-item:last-child{border-bottom:none}
+.gear-name{font-size:14px;font-weight:500;min-width:0;overflow:hidden;text-overflow:ellipsis}
+.gear-sub{font-family:var(--mono);font-size:10px;color:var(--muted);margin-top:2px}
+.gear-del{background:none;border:none;color:var(--faint);font-size:16px;cursor:pointer;padding:4px 6px;flex-shrink:0}
+.gear-add{display:flex;gap:8px;padding:11px 16px;border-top:1px solid var(--border);background:var(--bg2)}
+.gear-add input{flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:7px;color:var(--text);font-size:14px;padding:9px 11px;outline:none;font-family:inherit;min-width:0;-webkit-appearance:none}
+.gear-add input:focus{border-color:var(--amber)}
+.gear-add input.small{flex:0 0 64px}
+.gear-add button{background:var(--surface3);border:1px solid var(--border2);color:var(--amber);font-size:18px;font-weight:600;width:40px;border-radius:7px;cursor:pointer;flex-shrink:0}
+.empty{text-align:center;padding:64px 36px;color:var(--muted)}
+.empty .ic{margin-bottom:14px;opacity:.5}
+.empty-t{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px}
+.empty-x{font-size:13px;line-height:1.6}
+
+/* ───────── TABBAR ───────── */
+.tabbar{position:fixed;bottom:0;left:0;right:0;z-index:100;background:rgba(16,16,16,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--border);padding-bottom:env(safe-area-inset-bottom)}
+.tabbar-in{display:flex;max-width:640px;margin:0 auto}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 0 8px;cursor:pointer;background:none;border:none;color:var(--faint);transition:color .15s;font-family:inherit}
+.tab.active{color:var(--amber)}
+.tab svg{width:21px;height:21px}
+.tab-l{font-size:9px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+
+/* ───────── TOAST / CONFIRM ───────── */
+.toast{position:fixed;top:calc(64px + env(safe-area-inset-top));left:50%;transform:translateX(-50%) translateY(-16px);background:var(--surface3);color:var(--text);border:1px solid var(--border2);padding:10px 18px;border-radius:99px;font-size:12px;font-weight:600;letter-spacing:.03em;opacity:0;transition:all .25s;z-index:400;pointer-events:none;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.conf-ov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:500;align-items:center;justify-content:center;padding:32px}
+.conf-ov.open{display:flex}
+.conf{background:var(--surface);border:1px solid var(--border2);border-radius:14px;padding:22px;width:100%;max-width:320px;animation:fadein .15s}
+.conf-t{font-size:16px;font-weight:700;margin-bottom:7px}
+.conf-x{font-size:13px;color:var(--muted);line-height:1.55;margin-bottom:18px}
+.conf-a{display:flex;gap:9px}
+.conf-b{flex:1;padding:12px;border:none;border-radius:8px;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;font-family:inherit}
+.conf-b.danger{background:var(--red);color:#fff}
+.conf-b.ok{background:linear-gradient(145deg,var(--amber),#b8853f);color:#141414}
+.conf-b.cancel{background:var(--surface2);color:var(--text);border:1px solid var(--border2)}
+.hide{display:none!important}
+</style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-    <span class="nav-title">Film Log</span>
-    <span class="nav-roll" id="navRollName">No roll loaded</span>
-    <button class="nav-btn" onclick="showNewRollSetup()">New Roll</button>
-</nav>
+<header class="hdr"><div class="hdr-in">
+  <div class="brand">
+    <div class="brand-mark"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="#141414" stroke-width="2.2"/><circle cx="12" cy="12" r="3.4" stroke="#141414" stroke-width="2.2"/></svg></div>
+    <span class="brand-txt">Film Log</span>
+  </div>
+  <div class="hdr-ctx" id="hdrCtx"></div>
+</div></header>
 
-<!-- MAIN -->
 <div class="main">
 
-    <!-- SCREEN: SETUP -->
-    <div class="screen active" id="screenSetup">
-        <div style="padding: 24px 16px 8px;">
-            <div style="font-size: 22px; font-weight: 300; color: var(--text); margin-bottom: 6px;">Start a new roll</div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.5;">Enter the details for this roll. These will apply to all frames and can be overridden per frame.</div>
-        </div>
+<!-- ════ SHOOT ════ -->
+<div class="screen active" id="scrShoot">
+  <div id="shootEmpty" class="empty hide">
+    <div class="ic"><svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#9a958c" stroke-width="1.4"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 6V4m12 2V4"/></svg></div>
+    <div class="empty-t">No active roll</div>
+    <div class="empty-x">Load a roll to start logging frames, or pick a previous roll from the Rolls tab.</div>
+    <button class="btn" style="margin-top:22px" onclick="openRollSheet()">Load New Roll</button>
+  </div>
 
-        <div class="setup-card">
-            <div class="setup-card-header">Roll Details</div>
-            <div class="field-row">
-                <span class="field-label">Roll Name</span>
-                <input class="field-input" id="setupRollName" type="text" placeholder="e.g. Hampstead, May 2025">
-            </div>
-            <div class="field-row">
-                <span class="field-label">Date</span>
-                <input class="field-input" id="setupDate" type="date">
-            </div>
-            <div class="field-row">
-                <span class="field-label">Frames</span>
-                <select class="field-input" id="setupFrames">
-                    <option value="24">24</option>
-                    <option value="36" selected>36</option>
-                    <option value="12">12</option>
-                    <option value="72">72</option>
-                </select>
-                <span class="select-arrow">▼</span>
-            </div>
+  <div id="shootDash" class="hide">
+    <div class="dash">
+      <div class="dash-top">
+        <div>
+          <div class="dash-name" id="dName"></div>
+          <div class="dash-meta" id="dMeta"></div>
         </div>
-
-        <div class="setup-card">
-            <div class="setup-card-header">Camera & Film</div>
-            <div class="field-row">
-                <span class="field-label">Camera</span>
-                <input class="field-input" id="setupCamera" type="text" placeholder="e.g. Fed 3">
-            </div>
-            <div class="field-row">
-                <span class="field-label">Lens</span>
-                <input class="field-input" id="setupLens" type="text" placeholder="e.g. Jupiter 8">
-            </div>
-            <div class="field-row">
-                <span class="field-label">Focal Length</span>
-                <input class="field-input" id="setupFocalLength" type="number" placeholder="e.g. 50">
-            </div>
-            <div class="field-row">
-                <span class="field-label">Film Stock</span>
-                <input class="field-input" id="setupFilmStock" type="text" placeholder="e.g. Ilford FP4">
-            </div>
-            <div class="field-row">
-                <span class="field-label">ISO</span>
-                <input class="field-input" id="setupISO" type="number" placeholder="e.g. 125">
-            </div>
-        </div>
-
-        <button class="big-btn" onclick="startRoll()">Begin Roll</button>
+        <span class="status-pill" id="dStatus" onclick="cycleStatus()"></span>
+      </div>
+      <div class="dash-bar"><div class="dash-fill" id="dFill"></div></div>
+      <div class="dash-count"><span><b id="dExp">0</b> exposed</span><span><b id="dRem">36</b> remaining</span></div>
+      <div class="dash-actions">
+        <button class="dash-btn repeat" id="btnRepeat" onclick="logRepeat()">⟳ Same as last<small id="repeatHint"></small></button>
+        <button class="dash-btn primary" onclick="openQuick()">+ Log Frame</button>
+      </div>
     </div>
 
-    <!-- SCREEN: FRAMES -->
-    <div class="screen" id="screenFrames">
-        <div class="strip-header">
-            <div class="strip-progress">
-                <span id="exposedCount">0</span> exposed &nbsp;/&nbsp; <span id="totalFrames">36</span> frames
-            </div>
-            <button class="quick-log-btn" onclick="openQuickLog()">+ Log Frame</button>
+    <div class="flist">
+      <div class="fl-head">
+        <span class="fl-title">Frames</span>
+        <div class="fl-filter">
+          <button class="fl-fbtn on" id="filtAll" onclick="setFrameFilter('all')">All</button>
+          <button class="fl-fbtn" id="filtExp" onclick="setFrameFilter('exposed')">Exposed</button>
         </div>
-        <div class="frame-list" id="frameList"></div>
+      </div>
+      <div id="frameList"></div>
+      <button class="addframe" onclick="addExtraFrame()">+ Add frame (squeezed an extra exposure)</button>
     </div>
+  </div>
+</div>
 
-    <!-- SCREEN: ROLLS -->
-    <div class="screen" id="screenRolls">
-        <div class="rolls-list" id="rollsList">
-            <div class="empty-state">
-                <div class="empty-state-icon">🎞</div>
-                <div class="empty-state-title">No rolls yet</div>
-                <div class="empty-state-text">Start a new roll to begin logging your exposures.</div>
-            </div>
-        </div>
+<!-- ════ ROLLS ════ -->
+<div class="screen" id="scrRolls">
+  <div class="pg-head"><div class="pg-title">Rolls</div></div>
+  <div class="search">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#ece7dd" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg>
+    <input type="search" id="rollSearch" placeholder="Search rolls, cameras, film stocks…" oninput="renderRolls()">
+  </div>
+  <div class="statusbar" id="statusBar"></div>
+  <div id="rollsList"></div>
+  <button class="btn ghost" onclick="openRollSheet()">+ New Roll</button>
+</div>
+
+<!-- ════ GEAR ════ -->
+<div class="screen" id="scrGear">
+  <div class="pg-head"><div class="pg-title">Equipment</div><div class="pg-sub">Saved kit appears as one-tap options when you load a roll. Items from past rolls are learnt automatically.</div></div>
+  <div class="card"><div class="card-h">Cameras</div><div id="camList"></div>
+    <div class="gear-add"><input id="addCam" placeholder="e.g. Pentax MX"><button onclick="addGear('cameras','addCam')">+</button></div>
+  </div>
+  <div class="card"><div class="card-h">Lenses</div><div id="lensList"></div>
+    <div class="gear-add"><input id="addLens" placeholder="e.g. Jupiter 8"><input id="addLensFL" class="small" placeholder="mm" type="number"><button onclick="addLensItem()">+</button></div>
+  </div>
+  <div class="card"><div class="card-h">Film Stocks</div><div id="stockList"></div>
+    <div class="gear-add"><input id="addStock" placeholder="e.g. Ilford FP4 Plus"><input id="addStockISO" class="small" placeholder="ISO" type="number"><button onclick="addStockItem()">+</button></div>
+  </div>
+</div>
+
+<!-- ════ MORE ════ -->
+<div class="screen" id="scrMore">
+  <div class="pg-head"><div class="pg-title">Export &amp; Data</div></div>
+  <div class="card">
+    <div class="card-h">Export Roll</div>
+    <div class="frow"><span class="flabel">Roll</span><select class="fin" id="expRoll"></select></div>
+    <div class="frow" style="gap:8px;padding:12px 16px">
+      <button class="fbtn save" style="flex:1" onclick="exportJSON()">JSON</button>
+      <button class="fbtn save" style="flex:1;background:var(--surface2);color:var(--text);border:1px solid var(--border2)" onclick="exportCSV()">CSV</button>
     </div>
-
-    <!-- SCREEN: EXPORT -->
-    <div class="screen" id="screenExport">
-        <div style="padding: 24px 16px 8px;">
-            <div style="font-size: 22px; font-weight: 300; color: var(--text); margin-bottom: 6px;">Export</div>
-            <div style="font-size: 13px; color: var(--text-muted); line-height: 1.5;" id="exportRollInfo">Select a format to export the current roll.</div>
-        </div>
-
-        <div id="exportRollSelect" style="margin: 0 16px 12px; display:none;">
-            <select class="detail-input" id="exportRollPicker" onchange="updateExportInfo()">
-            </select>
-        </div>
-
-        <div class="export-card">
-            <div class="export-option" onclick="exportJSON()">
-                <div class="export-icon">{ }</div>
-                <div class="export-info">
-                    <div class="export-name">JSON Export</div>
-                    <div class="export-desc">Machine-readable format. Import directly into the Film Metadata Editor to apply exposure data to your scans.</div>
-                </div>
-            </div>
-            <div class="export-option" onclick="exportCSV()">
-                <div class="export-icon">⊞</div>
-                <div class="export-info">
-                    <div class="export-name">CSV Export</div>
-                    <div class="export-desc">Opens in Excel or Numbers. Review and edit your exposure log in a spreadsheet.</div>
-                </div>
-            </div>
-        </div>
-
-        <div style="margin: 0 16px;">
-            <div style="font-size: 11px; color: var(--text-muted); line-height: 1.6; padding: 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 4px;">
-                💡 <strong style="color: var(--text);">Tip:</strong> Export JSON to use with the Film Metadata Editor. The editor will read your frame data automatically so you don't have to re-enter exposure details.
-            </div>
-        </div>
+  </div>
+  <div class="card">
+    <div class="card-h">Backup</div>
+    <div class="frow" style="padding:13px 16px;font-size:12.5px;color:var(--muted);line-height:1.5">Your data lives only on this device. Back up regularly — clearing Safari website data would erase it.</div>
+    <div class="frow" style="gap:8px;padding:12px 16px">
+      <button class="fbtn save" style="flex:1" onclick="backupAll()">Back Up Everything</button>
+      <button class="fbtn save" style="flex:1;background:var(--surface2);color:var(--text);border:1px solid var(--border2)" onclick="document.getElementById('restoreFile').click()">Restore</button>
+      <input type="file" id="restoreFile" accept=".json,application/json" class="hide" onchange="restoreAll(this)">
     </div>
+  </div>
+  <div class="card">
+    <div class="card-h">About</div>
+    <div class="frow" style="padding:13px 16px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.8" id="aboutBox"></div>
+  </div>
+</div>
 
 </div>
 
-<!-- TAB BAR -->
-<div class="tabbar">
-    <button class="tab active" id="tabShoot" onclick="switchTab('shoot')">
-        <span class="tab-icon">📷</span>
-        <span class="tab-label">Shoot</span>
-    </button>
-    <button class="tab" id="tabRolls" onclick="switchTab('rolls')">
-        <span class="tab-icon">🎞</span>
-        <span class="tab-label">Rolls</span>
-    </button>
-    <button class="tab" id="tabExport" onclick="switchTab('export')">
-        <span class="tab-icon">↑</span>
-        <span class="tab-label">Export</span>
-    </button>
-</div>
+<!-- ════ TABBAR ════ -->
+<nav class="tabbar"><div class="tabbar-in">
+  <button class="tab active" id="tabShoot" onclick="go('Shoot')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>
+    <span class="tab-l">Shoot</span></button>
+  <button class="tab" id="tabRolls" onclick="go('Rolls')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 4v16M17 4v16M3 9h4M3 14h4M17 9h4M17 14h4"/></svg>
+    <span class="tab-l">Rolls</span></button>
+  <button class="tab" id="tabGear" onclick="go('Gear')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 0 0-.1-1.2l2-1.5-2-3.4-2.3 1a7 7 0 0 0-2-1.2L14.2 3h-4l-.4 2.5a7 7 0 0 0-2 1.2l-2.3-1-2 3.4 2 1.5a7.3 7.3 0 0 0 0 2.4l-2 1.5 2 3.4 2.3-1a7 7 0 0 0 2 1.2l.4 2.5h4l.4-2.5a7 7 0 0 0 2-1.2l2.3 1 2-3.4-2-1.5c.06-.4.1-.8.1-1.2Z"/></svg>
+    <span class="tab-l">Gear</span></button>
+  <button class="tab" id="tabMore" onclick="go('More')">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+    <span class="tab-l">Data</span></button>
+</div></nav>
 
-<!-- QUICK LOG MODAL -->
-<div class="modal-overlay" id="quickLogModal" onclick="closeModalOnOverlay(event)">
-    <div class="modal">
-        <div class="modal-title">Log Frame <span class="modal-frame-number" id="quickFrameNum">#1</span></div>
-        <div class="quick-grid">
-            <div class="quick-field">
-                <div class="quick-label">Shutter Speed</div>
-                <select class="quick-input" id="quickShutter">
-                    <option value="">—</option>
-                    <option value="1/1000">1/1000</option>
-                    <option value="1/500">1/500</option>
-                    <option value="1/250">1/250</option>
-                    <option value="1/125">1/125</option>
-                    <option value="1/60">1/60</option>
-                    <option value="1/30">1/30</option>
-                    <option value="1/15">1/15</option>
-                    <option value="1/8">1/8</option>
-                    <option value="1/4">1/4</option>
-                    <option value="1/2">1/2</option>
-                    <option value="1">1s</option>
-                    <option value="2">2s</option>
-                    <option value="4">4s</option>
-                    <option value="bulb">Bulb</option>
-                </select>
-            </div>
-            <div class="quick-field">
-                <div class="quick-label">Aperture</div>
-                <select class="quick-input" id="quickAperture">
-                    <option value="">—</option>
-                    <option value="1.2">f/1.2</option>
-                    <option value="1.4">f/1.4</option>
-                    <option value="1.8">f/1.8</option>
-                    <option value="2">f/2</option>
-                    <option value="2.8">f/2.8</option>
-                    <option value="4">f/4</option>
-                    <option value="5.6">f/5.6</option>
-                    <option value="8">f/8</option>
-                    <option value="11">f/11</option>
-                    <option value="16">f/16</option>
-                    <option value="22">f/22</option>
-                </select>
-            </div>
-            <div class="quick-field">
-                <div class="quick-label">Lens Override</div>
-                <input class="quick-input" id="quickLens" type="text" placeholder="If changed">
-            </div>
-            <div class="quick-field">
-                <div class="quick-label">Focal Length</div>
-                <input class="quick-input" id="quickFocalLength" type="number" placeholder="mm">
-            </div>
-            <div class="quick-field quick-note">
-                <div class="quick-label">Notes / Subject</div>
-                <input class="quick-input" id="quickNote" type="text" placeholder="e.g. Regent's Canal, afternoon light">
-            </div>
-        </div>
-        <div class="gps-indicator" id="quickGpsStatus"></div>
-        <div class="modal-actions">
-            <button class="modal-btn gps-btn" onclick="captureGPS('quick')" title="Capture GPS">📍</button>
-            <button class="modal-btn cancel" onclick="closeQuickLog()">Cancel</button>
-            <button class="modal-btn save" onclick="saveQuickLog()">Save Frame</button>
-        </div>
+<!-- ════ QUICK LOG SHEET ════ -->
+<div class="sheet-ov" id="quickOv" onclick="if(event.target===this)closeQuick()">
+  <div class="sheet">
+    <div class="sheet-grab"></div>
+    <div class="sheet-title">Frame <b id="qNum">#1</b></div>
+    <div class="qlabel">Shutter</div><div class="chiprow" id="qShutter"></div>
+    <div class="qlabel">Aperture</div><div class="chiprow" id="qAperture"></div>
+    <div class="qlabel">Lens</div><div class="chiprow" id="qLens"></div>
+    <div class="q2" style="margin-top:10px">
+      <div><div class="qlabel" style="margin-top:0">Focal length (mm)</div><input class="qin" id="qFL" type="number" inputmode="numeric"></div>
+      <div><div class="qlabel" style="margin-top:0">&nbsp;</div><button class="sbtn icon" style="width:100%" onclick="captureGPS('quick')">📍 GPS</button></div>
     </div>
-</div>
-
-<!-- CONFIRM DIALOG -->
-<div class="confirm-overlay" id="confirmOverlay">
-    <div class="confirm-box">
-        <div class="confirm-title" id="confirmTitle">Are you sure?</div>
-        <div class="confirm-text" id="confirmText"></div>
-        <div class="confirm-actions">
-            <button class="confirm-btn cancel" onclick="closeConfirm()">Cancel</button>
-            <button class="confirm-btn danger" id="confirmOkBtn">Delete</button>
-        </div>
+    <div class="qlabel">Note / subject</div>
+    <input class="qin" id="qNote" placeholder="e.g. canal bridge, low sun">
+    <div class="gpsline" id="qGps"></div>
+    <div class="sheet-actions">
+      <button class="sbtn cancel" onclick="closeQuick()">Cancel</button>
+      <button class="sbtn save" onclick="saveQuick()">Save Frame</button>
     </div>
+  </div>
 </div>
 
-<!-- TOAST -->
+<!-- ════ ROLL SHEET (new/edit) ════ -->
+<div class="sheet-ov" id="rollOv" onclick="if(event.target===this)closeRollSheet()">
+  <div class="sheet">
+    <div class="sheet-grab"></div>
+    <div class="sheet-title" id="rollSheetTitle">Load New Roll</div>
+    <div class="qlabel">Roll name</div><input class="qin" id="rName" placeholder="e.g. Pembrokeshire, June 2026">
+    <div class="q2" style="margin-top:2px">
+      <div><div class="qlabel">Date loaded</div><input class="qin" id="rDate" type="date"></div>
+      <div><div class="qlabel">Frames</div><select class="qin" id="rFrames"><option>12</option><option>24</option><option selected>36</option></select></div>
+    </div>
+    <div class="qlabel">Camera</div><div class="chiprow" id="rCamChips"></div>
+    <input class="qin" id="rCamera" placeholder="Or type a camera…" style="margin-top:6px">
+    <div class="qlabel">Default lens</div><div class="chiprow" id="rLensChips"></div>
+    <div class="q2" style="margin-top:6px">
+      <input class="qin" id="rLens" placeholder="Or type a lens…">
+      <input class="qin" id="rFL" type="number" inputmode="numeric" placeholder="Focal mm">
+    </div>
+    <div class="qlabel">Film stock</div><div class="chiprow" id="rStockChips"></div>
+    <div class="q2" style="margin-top:6px">
+      <input class="qin" id="rStock" placeholder="Or type a stock…">
+      <input class="qin" id="rISO" type="number" inputmode="numeric" placeholder="Box ISO">
+    </div>
+    <div class="q2" style="margin-top:10px">
+      <div><div class="qlabel" style="margin-top:0">Shot at EI (if pushed/pulled)</div><input class="qin" id="rEI" type="number" inputmode="numeric" placeholder="Same as ISO"></div>
+      <div><div class="qlabel" style="margin-top:0">Dev notes</div><input class="qin" id="rDev" placeholder="e.g. push +1"></div>
+    </div>
+    <div class="sheet-actions">
+      <button class="sbtn cancel" onclick="closeRollSheet()">Cancel</button>
+      <button class="sbtn save" id="rollSheetSave" onclick="saveRollSheet()">Load Roll</button>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CONFIRM / TOAST ════ -->
+<div class="conf-ov" id="confOv"><div class="conf">
+  <div class="conf-t" id="confT"></div><div class="conf-x" id="confX"></div>
+  <div class="conf-a"><button class="conf-b cancel" onclick="closeConf()">Cancel</button><button class="conf-b danger" id="confOk">OK</button></div>
+</div></div>
 <div class="toast" id="toast"></div>
 
 <script>
-// ── STATE ──────────────────────────────────────────────────────────────────
+'use strict';
+/* ════════════════ CONSTANTS ════════════════ */
+const APP_VERSION='2.0';
+const SHUTTERS=['1/4000','1/2000','1/1000','1/500','1/250','1/125','1/60','1/30','1/15','1/8','1/4','1/2','1','2','4','8','15','30','bulb'];
+const APERTURES=['0.95','1.2','1.4','1.5','1.8','2','2.5','2.8','3.5','4','4.5','5.6','6.3','8','11','16','22','32'];
+const STATUSES=['shooting','finished','developed','scanned'];
+const STATUS_LABEL={shooting:'Shooting',finished:'Finished',developed:'Developed',scanned:'Scanned'};
+const STATUS_COLOR={shooting:'var(--amber)',finished:'var(--blue)',developed:'var(--green)',scanned:'var(--faint)'};
 
-let state = {
-    rolls: [],
-    activeRollId: null
-};
+/* ════════════════ STATE & MIGRATION ════════════════ */
+let state={version:2,rolls:[],activeRollId:null,gear:{cameras:[],lenses:[],stocks:[]},lastQuick:null};
+let frameFilter='all', editingRollId=null, quickTarget=null, tempGPS=null, confirmCb=null;
+let sel={shutter:'',aperture:'',lens:''};
 
-let quickLogTargetFrame = null;
-let tempGPS = null;
-let confirmCallback = null;
-
-// ── PERSISTENCE ────────────────────────────────────────────────────────────
-
-function saveState() {
-    try {
-        localStorage.setItem('filmlog_state', JSON.stringify(state));
-    } catch(e) {
-        console.warn('Could not save state:', e);
-    }
-}
-
-function loadState() {
-    try {
-        const saved = localStorage.getItem('filmlog_state');
-        if (saved) {
-            state = JSON.parse(saved);
-        }
-    } catch(e) {
-        console.warn('Could not load state:', e);
-    }
-}
-
-function getActiveRoll() {
-    return state.rolls.find(r => r.id === state.activeRollId) || null;
-}
-
-// ── ROLL MANAGEMENT ────────────────────────────────────────────────────────
-
-function showNewRollSetup() {
-    switchTab('shoot');
-    document.getElementById('setupDate').value = new Date().toISOString().split('T')[0];
-
-    if (state.rolls.length > 0) {
-        const last = state.rolls[state.rolls.length - 1];
-        document.getElementById('setupCamera').value = last.camera || '';
-        document.getElementById('setupLens').value = last.defaultLens || '';
-        document.getElementById('setupFocalLength').value = last.defaultFocalLength || '';
-        document.getElementById('setupFilmStock').value = last.filmStock || '';
-        document.getElementById('setupISO').value = last.iso || '';
-    }
-
-    document.getElementById('screenSetup').classList.add('active');
-    document.getElementById('screenFrames').classList.remove('active');
-}
-
-function startRoll() {
-    const name = document.getElementById('setupRollName').value.trim();
-    const date = document.getElementById('setupDate').value;
-    const frameCount = parseInt(document.getElementById('setupFrames').value);
-    const camera = document.getElementById('setupCamera').value.trim();
-    const lens = document.getElementById('setupLens').value.trim();
-    const focalLength = document.getElementById('setupFocalLength').value;
-    const filmStock = document.getElementById('setupFilmStock').value.trim();
-    const iso = document.getElementById('setupISO').value;
-
-    if (!name) { showToast('Please enter a roll name'); return; }
-    if (!camera) { showToast('Please enter a camera body'); return; }
-    if (!filmStock) { showToast('Please enter a film stock'); return; }
-
-    const frames = [];
-    for (let i = 1; i <= frameCount; i++) {
-        frames.push({
-            number: i,
-            exposed: false,
-            shutter: '',
-            aperture: '',
-            lens: '',
-            focalLength: '',
-            note: '',
-            gps: null,
-            timestamp: null
-        });
-    }
-
-    const roll = {
-        id: Date.now().toString(),
-        name: name || `Roll ${state.rolls.length + 1}`,
-        date: date,
-        camera: camera,
-        defaultLens: lens,
-        defaultFocalLength: focalLength,
-        filmStock: filmStock,
-        iso: iso,
-        frames: frames,
-        createdAt: new Date().toISOString()
-    };
-
-    state.rolls.push(roll);
-    state.activeRollId = roll.id;
-    saveState();
-
-    renderFrames();
-    switchTab('shoot');
-    document.getElementById('screenSetup').classList.remove('active');
-    document.getElementById('screenFrames').classList.add('active');
-    updateNavRollName();
-    showToast('Roll started!');
-}
-
-// ── FRAME RENDERING ────────────────────────────────────────────────────────
-
-function renderFrames() {
-    const roll = getActiveRoll();
-    if (!roll) return;
-
-    document.getElementById('totalFrames').textContent = roll.frames.length;
-    updateExposedCount();
-
-    const list = document.getElementById('frameList');
-    list.innerHTML = '';
-
-    roll.frames.forEach(frame => {
-        const card = document.createElement('div');
-        card.className = `frame-card${frame.exposed ? ' exposed' : ''}`;
-        card.id = `frame-${frame.number}`;
-
-        const lensDisplay = frame.lens || roll.defaultLens;
-        const flDisplay = frame.focalLength || roll.defaultFocalLength;
-        let summary = frame.exposed
-            ? [
-                frame.shutter ? frame.shutter : null,
-                frame.aperture ? `f/${frame.aperture}` : null,
-                lensDisplay ? `${lensDisplay}${flDisplay ? ' ' + flDisplay + 'mm' : ''}` : null,
-                frame.note || null
-              ].filter(Boolean).join(' · ') || 'Logged'
-            : 'Unexposed';
-
-        card.innerHTML = `
-            <div class="frame-card-header" onclick="toggleFrame(${frame.number})">
-                <span class="frame-number">${String(frame.number).padStart(2,'0')}</span>
-                <span class="frame-summary">${summary}</span>
-                <span class="frame-chevron">▶</span>
-            </div>
-            <div class="frame-detail">
-                <div class="detail-grid">
-                    <div class="detail-field">
-                        <div class="detail-label">Shutter Speed</div>
-                        <select class="detail-input" id="f${frame.number}-shutter">
-                            <option value="">—</option>
-                            <option value="1/1000" ${frame.shutter==='1/1000'?'selected':''}>1/1000</option>
-                            <option value="1/500" ${frame.shutter==='1/500'?'selected':''}>1/500</option>
-                            <option value="1/250" ${frame.shutter==='1/250'?'selected':''}>1/250</option>
-                            <option value="1/125" ${frame.shutter==='1/125'?'selected':''}>1/125</option>
-                            <option value="1/60" ${frame.shutter==='1/60'?'selected':''}>1/60</option>
-                            <option value="1/30" ${frame.shutter==='1/30'?'selected':''}>1/30</option>
-                            <option value="1/15" ${frame.shutter==='1/15'?'selected':''}>1/15</option>
-                            <option value="1/8" ${frame.shutter==='1/8'?'selected':''}>1/8</option>
-                            <option value="1/4" ${frame.shutter==='1/4'?'selected':''}>1/4</option>
-                            <option value="1/2" ${frame.shutter==='1/2'?'selected':''}>1/2</option>
-                            <option value="1" ${frame.shutter==='1'?'selected':''}>1s</option>
-                            <option value="2" ${frame.shutter==='2'?'selected':''}>2s</option>
-                            <option value="4" ${frame.shutter==='4'?'selected':''}>4s</option>
-                            <option value="bulb" ${frame.shutter==='bulb'?'selected':''}>Bulb</option>
-                        </select>
-                    </div>
-                    <div class="detail-field">
-                        <div class="detail-label">Aperture</div>
-                        <select class="detail-input" id="f${frame.number}-aperture">
-                            <option value="">—</option>
-                            <option value="1.2" ${frame.aperture==='1.2'?'selected':''}>f/1.2</option>
-                            <option value="1.4" ${frame.aperture==='1.4'?'selected':''}>f/1.4</option>
-                            <option value="1.8" ${frame.aperture==='1.8'?'selected':''}>f/1.8</option>
-                            <option value="2" ${frame.aperture==='2'?'selected':''}>f/2</option>
-                            <option value="2.8" ${frame.aperture==='2.8'?'selected':''}>f/2.8</option>
-                            <option value="4" ${frame.aperture==='4'?'selected':''}>f/4</option>
-                            <option value="5.6" ${frame.aperture==='5.6'?'selected':''}>f/5.6</option>
-                            <option value="8" ${frame.aperture==='8'?'selected':''}>f/8</option>
-                            <option value="11" ${frame.aperture==='11'?'selected':''}>f/11</option>
-                            <option value="16" ${frame.aperture==='16'?'selected':''}>f/16</option>
-                            <option value="22" ${frame.aperture==='22'?'selected':''}>f/22</option>
-                        </select>
-                    </div>
-                    <div class="detail-field">
-                        <div class="detail-label">Lens Override</div>
-                        <input class="detail-input" id="f${frame.number}-lens" type="text" 
-                               value="${frame.lens}" placeholder="${roll.defaultLens || 'Default lens'}">
-                    </div>
-                    <div class="detail-field">
-                        <div class="detail-label">Focal Length</div>
-                        <input class="detail-input" id="f${frame.number}-fl" type="number"
-                               value="${frame.focalLength}" placeholder="${roll.defaultFocalLength || 'mm'}">
-                    </div>
-                    <div class="detail-field full-width">
-                        <div class="detail-label">Notes / Subject</div>
-                        <input class="detail-input" id="f${frame.number}-note" type="text"
-                               value="${frame.note}" placeholder="Subject, location, lighting...">
-                    </div>
-                    ${frame.gps ? `<div class="detail-field full-width">
-                        <div class="detail-label">GPS</div>
-                        <div style="font-size:11px; color: var(--success); padding: 4px 0;">
-                            📍 ${frame.gps.lat.toFixed(5)}, ${frame.gps.lng.toFixed(5)}
-                        </div>
-                    </div>` : ''}
-                </div>
-                <div class="frame-actions">
-                    <button class="frame-btn gps" onclick="captureGPS('frame', ${frame.number})">📍 GPS</button>
-                    <button class="frame-btn save" onclick="saveFrame(${frame.number})">Save</button>
-                    ${frame.exposed ? `<button class="frame-btn clear" onclick="clearFrame(${frame.number})">Clear</button>` : ''}
-                </div>
-            </div>
-        `;
-
-        list.appendChild(card);
+function load(){
+  try{
+    const raw=localStorage.getItem('filmlog_state');
+    if(!raw) return;
+    const s=JSON.parse(raw);
+    state.rolls=(s.rolls||[]).map(r=>({
+      id:r.id, name:r.name||'Untitled roll', date:r.date||'',
+      camera:r.camera||'', defaultLens:r.defaultLens||'', defaultFocalLength:r.defaultFocalLength||'',
+      filmStock:r.filmStock||'', iso:r.iso||'', ei:r.ei||'', devNotes:r.devNotes||'',
+      status:r.status||'shooting', createdAt:r.createdAt||new Date().toISOString(),
+      frames:(r.frames||[]).map(f=>({number:f.number,exposed:!!f.exposed,shutter:f.shutter||'',aperture:f.aperture||'',lens:f.lens||'',focalLength:f.focalLength||'',note:f.note||'',gps:f.gps||null,timestamp:f.timestamp||null}))
+    }));
+    state.activeRollId=s.activeRollId||null;
+    state.gear=s.gear||{cameras:[],lenses:[],stocks:[]};
+    state.lastQuick=s.lastQuick||null;
+    // learn gear from historic rolls (v1 → v2 migration)
+    state.rolls.forEach(r=>{
+      learnGear('cameras',r.camera);
+      learnGear('lenses',r.defaultLens,r.defaultFocalLength);
+      learnGear('stocks',r.filmStock,r.iso);
+      r.frames.forEach(f=>learnGear('lenses',f.lens,f.focalLength));
     });
+  }catch(e){console.warn('load failed',e)}
+}
+function save(){
+  state.version=2;
+  try{localStorage.setItem('filmlog_state',JSON.stringify(state))}
+  catch(e){toast('⚠ Could not save — storage full?')}
+}
+function learnGear(kind,name,extra){
+  if(!name||!name.trim())return;
+  name=name.trim();
+  const list=state.gear[kind];
+  if(list.some(g=>g.name.toLowerCase()===name.toLowerCase()))return;
+  const item={name};
+  if(kind==='lenses'&&extra)item.fl=extra;
+  if(kind==='stocks'&&extra)item.iso=extra;
+  list.push(item);
+}
+const roll=()=>state.rolls.find(r=>r.id===state.activeRollId)||null;
+const esc=s=>String(s??'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+/* ════════════════ NAV ════════════════ */
+function go(name){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab'+name).classList.add('active');
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('scr'+name).classList.add('active');
+  if(name==='Shoot')renderShoot();
+  if(name==='Rolls')renderRolls();
+  if(name==='Gear')renderGear();
+  if(name==='More')renderMore();
+  window.scrollTo(0,0);
 }
 
-function toggleFrame(number) {
-    const card = document.getElementById(`frame-${number}`);
-    const wasOpen = card.classList.contains('open');
-    document.querySelectorAll('.frame-card.open').forEach(c => c.classList.remove('open'));
-    if (!wasOpen) card.classList.add('open');
+/* ════════════════ SHOOT SCREEN ════════════════ */
+function renderShoot(){
+  const r=roll();
+  document.getElementById('hdrCtx').textContent=r?`${r.name}`:'';
+  document.getElementById('shootEmpty').classList.toggle('hide',!!r);
+  document.getElementById('shootDash').classList.toggle('hide',!r);
+  if(!r)return;
+
+  const exp=r.frames.filter(f=>f.exposed).length;
+  document.getElementById('dName').textContent=r.name;
+  const eiTxt=(r.ei&&r.ei!==r.iso)?` → EI <b>${esc(r.ei)}</b>`:'';
+  document.getElementById('dMeta').innerHTML=
+    `<b>${esc(r.camera)}</b> · ${esc(r.filmStock)} @ ${esc(r.iso)}${eiTxt}`+
+    (r.defaultLens?`<br>${esc(r.defaultLens)}${r.defaultFocalLength?' '+esc(r.defaultFocalLength)+'mm':''}`:'');
+  const pill=document.getElementById('dStatus');
+  pill.textContent=STATUS_LABEL[r.status];
+  pill.className='status-pill st-'+r.status;
+  document.getElementById('dFill').style.width=(exp/r.frames.length*100)+'%';
+  document.getElementById('dExp').textContent=exp;
+  document.getElementById('dRem').textContent=r.frames.length-exp;
+
+  const lq=state.lastQuick;
+  const btn=document.getElementById('btnRepeat');
+  btn.disabled=!lq;
+  document.getElementById('repeatHint').textContent=lq?[lq.shutter,lq.aperture?'f/'+lq.aperture:''].filter(Boolean).join(' · '):'';
+
+  renderFrames();
+}
+function setFrameFilter(f){
+  frameFilter=f;
+  document.getElementById('filtAll').classList.toggle('on',f==='all');
+  document.getElementById('filtExp').classList.toggle('on',f==='exposed');
+  renderFrames();
+}
+function renderFrames(){
+  const r=roll(); if(!r)return;
+  const list=document.getElementById('frameList');
+  list.innerHTML='';
+  r.frames.forEach(f=>{
+    if(frameFilter==='exposed'&&!f.exposed)return;
+    const lens=f.lens||r.defaultLens, fl=f.focalLength||r.defaultFocalLength;
+    const card=document.createElement('div');
+    card.className='fcard'+(f.exposed?' exposed':'');
+    card.id='fc'+f.number;
+    const setBits=[f.shutter,f.aperture?'f/'+f.aperture:null,(lens?lens+(fl?' '+fl+'mm':''):null)].filter(Boolean).join('  ·  ');
+    const sum=f.exposed
+      ?`<span class="set">${esc(setBits)||'Logged'}</span>${f.note?`<span class="nt">${esc(f.note)}</span>`:''}`
+      :'Unexposed';
+    card.innerHTML=`
+      <div class="fcard-h" onclick="toggleFrame(${f.number})">
+        <span class="fnum">${String(f.number).padStart(2,'0')}</span>
+        <span class="fsum">${sum}</span>
+        ${f.gps?'<span class="fgps">📍</span>':''}
+        <span class="fchev">▶</span>
+      </div>
+      <div class="fdetail">
+        <div class="dgrid">
+          <div class="dfield"><div class="dlabel">Shutter</div>
+            <select class="din" id="f${f.number}s"><option value="">—</option>${SHUTTERS.map(s=>`<option ${f.shutter===s?'selected':''}>${s}</option>`).join('')}</select></div>
+          <div class="dfield"><div class="dlabel">Aperture</div>
+            <select class="din" id="f${f.number}a"><option value="">—</option>${APERTURES.map(a=>`<option value="${a}" ${f.aperture===a?'selected':''}>f/${a}</option>`).join('')}</select></div>
+          <div class="dfield"><div class="dlabel">Lens override</div>
+            <input class="din" id="f${f.number}l" value="${esc(f.lens)}" placeholder="${esc(r.defaultLens)||'Default'}"></div>
+          <div class="dfield"><div class="dlabel">Focal mm</div>
+            <input class="din" id="f${f.number}f" type="number" value="${esc(f.focalLength)}" placeholder="${esc(r.defaultFocalLength)||'mm'}"></div>
+          <div class="dfield full"><div class="dlabel">Note</div>
+            <input class="din" id="f${f.number}n" value="${esc(f.note)}" placeholder="Subject, light, location…"></div>
+          ${f.gps?`<div class="dfield full"><div class="dlabel">GPS</div><div style="font-family:var(--mono);font-size:11px;color:var(--green);padding:3px 0">📍 ${f.gps.lat.toFixed(5)}, ${f.gps.lng.toFixed(5)}</div></div>`:''}
+        </div>
+        <div class="factions">
+          <button class="fbtn gps" onclick="captureGPS('frame',${f.number})">📍</button>
+          <button class="fbtn save" onclick="saveFrame(${f.number})">Save</button>
+          ${f.exposed?`<button class="fbtn clear" onclick="clearFrame(${f.number})">✕</button>`:''}
+        </div>
+      </div>`;
+    list.appendChild(card);
+  });
+}
+function toggleFrame(n){
+  const c=document.getElementById('fc'+n);
+  const was=c.classList.contains('open');
+  document.querySelectorAll('.fcard.open').forEach(x=>x.classList.remove('open'));
+  if(!was)c.classList.add('open');
+}
+function saveFrame(n){
+  const r=roll(); const f=r.frames.find(x=>x.number===n);
+  f.shutter=document.getElementById('f'+n+'s').value;
+  f.aperture=document.getElementById('f'+n+'a').value;
+  f.lens=document.getElementById('f'+n+'l').value.trim();
+  f.focalLength=document.getElementById('f'+n+'f').value;
+  f.note=document.getElementById('f'+n+'n').value.trim();
+  f.exposed=true; f.timestamp=f.timestamp||new Date().toISOString();
+  learnGear('lenses',f.lens,f.focalLength);
+  state.lastQuick={shutter:f.shutter,aperture:f.aperture,lens:f.lens,focalLength:f.focalLength};
+  save(); renderShoot(); toast(`Frame ${n} saved`);
+}
+function clearFrame(n){
+  confirm_('Clear frame '+n+'?','Its settings, note and GPS will be removed.',()=>{
+    const f=roll().frames.find(x=>x.number===n);
+    Object.assign(f,{exposed:false,shutter:'',aperture:'',lens:'',focalLength:'',note:'',gps:null,timestamp:null});
+    save(); renderShoot(); toast('Frame cleared');
+  });
+}
+function addExtraFrame(){
+  const r=roll(); if(!r)return;
+  r.frames.push({number:r.frames.length+1,exposed:false,shutter:'',aperture:'',lens:'',focalLength:'',note:'',gps:null,timestamp:null});
+  save(); renderShoot(); toast('Frame '+r.frames.length+' added');
+}
+function cycleStatus(){
+  const r=roll(); if(!r)return;
+  r.status=STATUSES[(STATUSES.indexOf(r.status)+1)%STATUSES.length];
+  save(); renderShoot(); toast('Status: '+STATUS_LABEL[r.status]);
+}
+function logRepeat(){
+  const r=roll(); const lq=state.lastQuick;
+  if(!r||!lq)return;
+  const f=r.frames.find(x=>!x.exposed);
+  if(!f){toast('Roll fully exposed');return}
+  Object.assign(f,{exposed:true,shutter:lq.shutter,aperture:lq.aperture,lens:lq.lens,focalLength:lq.focalLength,timestamp:new Date().toISOString()});
+  save(); renderShoot(); toast(`Frame ${f.number} · same settings`);
 }
 
-function saveFrame(number) {
-    const roll = getActiveRoll();
-    const frame = roll.frames.find(f => f.number === number);
-
-    frame.shutter = document.getElementById(`f${number}-shutter`).value;
-    frame.aperture = document.getElementById(`f${number}-aperture`).value;
-    frame.lens = document.getElementById(`f${number}-lens`).value;
-    frame.focalLength = document.getElementById(`f${number}-fl`).value;
-    frame.note = document.getElementById(`f${number}-note`).value;
-    frame.exposed = true;
-    frame.timestamp = new Date().toISOString();
-
-    saveState();
-    renderFrames();
-    showToast(`Frame ${number} saved`);
+/* ════════════════ QUICK LOG ════════════════ */
+function chipify(elId,values,selected,fmt,onPick){
+  const el=document.getElementById(elId);
+  el.innerHTML='';
+  const none=document.createElement('button');
+  none.className='chip none'+(selected?'':' on');
+  none.textContent='—';
+  none.onclick=()=>{onPick('');chipify(elId,values,'',fmt,onPick)};
+  el.appendChild(none);
+  values.forEach(v=>{
+    const c=document.createElement('button');
+    c.className='chip'+(selected===v?' on':'');
+    c.textContent=fmt?fmt(v):v;
+    c.onclick=()=>{onPick(v);chipify(elId,values,v,fmt,onPick)};
+    el.appendChild(c);
+  });
+  // scroll selected into view
+  const on=el.querySelector('.chip.on');
+  if(on&&on.scrollIntoView)setTimeout(()=>{try{on.scrollIntoView({inline:'center',block:'nearest'})}catch(e){}},30);
+}
+function openQuick(){
+  const r=roll(); if(!r)return;
+  const f=r.frames.find(x=>!x.exposed);
+  quickTarget=f?f.number:r.frames.length;
+  tempGPS=null;
+  const lq=state.lastQuick||{};
+  sel={shutter:lq.shutter||'',aperture:lq.aperture||'',lens:lq.lens||''};
+  document.getElementById('qNum').textContent='#'+quickTarget;
+  chipify('qShutter',SHUTTERS,sel.shutter,null,v=>sel.shutter=v);
+  chipify('qAperture',APERTURES,sel.aperture,v=>'f/'+v,v=>sel.aperture=v);
+  const lensNames=state.gear.lenses.map(l=>l.name);
+  chipify('qLens',lensNames,sel.lens,null,v=>{
+    sel.lens=v;
+    const g=state.gear.lenses.find(l=>l.name===v);
+    if(g&&g.fl)document.getElementById('qFL').value=g.fl;
+  });
+  document.getElementById('qFL').value=lq.focalLength||'';
+  document.getElementById('qNote').value='';
+  document.getElementById('qGps').textContent='';
+  document.getElementById('quickOv').classList.add('open');
+}
+function closeQuick(){document.getElementById('quickOv').classList.remove('open');tempGPS=null}
+function saveQuick(){
+  const r=roll(); const f=r.frames.find(x=>x.number===quickTarget);
+  if(!f)return;
+  f.shutter=sel.shutter; f.aperture=sel.aperture; f.lens=sel.lens;
+  f.focalLength=document.getElementById('qFL').value;
+  f.note=document.getElementById('qNote').value.trim();
+  f.exposed=true; f.timestamp=new Date().toISOString();
+  if(tempGPS)f.gps=tempGPS;
+  learnGear('lenses',f.lens,f.focalLength);
+  state.lastQuick={shutter:f.shutter,aperture:f.aperture,lens:f.lens,focalLength:f.focalLength};
+  save(); closeQuick(); renderShoot(); toast(`Frame ${f.number} logged`);
 }
 
-function clearFrame(number) {
-    showConfirm(
-        'Clear frame?',
-        `This will remove all data from frame ${number}.`,
-        () => {
-            const roll = getActiveRoll();
-            const frame = roll.frames.find(f => f.number === number);
-            frame.exposed = false;
-            frame.shutter = '';
-            frame.aperture = '';
-            frame.lens = '';
-            frame.focalLength = '';
-            frame.note = '';
-            frame.gps = null;
-            frame.timestamp = null;
-            saveState();
-            renderFrames();
-            showToast('Frame cleared');
-        }
-    );
-}
-
-function updateExposedCount() {
-    const roll = getActiveRoll();
-    if (!roll) return;
-    const count = roll.frames.filter(f => f.exposed).length;
-    document.getElementById('exposedCount').textContent = count;
-}
-
-// ── QUICK LOG ──────────────────────────────────────────────────────────────
-
-function openQuickLog() {
-    const roll = getActiveRoll();
-    if (!roll) { showToast('No active roll'); return; }
-
-    const next = roll.frames.find(f => !f.exposed);
-    quickLogTargetFrame = next ? next.number : roll.frames.length;
-
-    document.getElementById('quickFrameNum').textContent = `#${quickLogTargetFrame}`;
-    document.getElementById('quickShutter').value = '';
-    document.getElementById('quickAperture').value = '';
-    document.getElementById('quickLens').value = '';
-    document.getElementById('quickFocalLength').value = '';
-    document.getElementById('quickNote').value = '';
-    document.getElementById('quickGpsStatus').textContent = '';
-    tempGPS = null;
-
-    document.getElementById('quickLogModal').classList.add('open');
-    setTimeout(() => document.getElementById('quickNote').focus(), 300);
-}
-
-function closeQuickLog() {
-    document.getElementById('quickLogModal').classList.remove('open');
-    tempGPS = null;
-}
-
-function closeModalOnOverlay(event) {
-    if (event.target === document.getElementById('quickLogModal')) closeQuickLog();
-}
-
-function saveQuickLog() {
-    const roll = getActiveRoll();
-    const frame = roll.frames.find(f => f.number === quickLogTargetFrame);
-    if (!frame) return;
-
-    frame.shutter = document.getElementById('quickShutter').value;
-    frame.aperture = document.getElementById('quickAperture').value;
-    frame.lens = document.getElementById('quickLens').value;
-    frame.focalLength = document.getElementById('quickFocalLength').value;
-    frame.note = document.getElementById('quickNote').value;
-    frame.exposed = true;
-    frame.timestamp = new Date().toISOString();
-    if (tempGPS) frame.gps = tempGPS;
-
-    saveState();
-    renderFrames();
-    closeQuickLog();
-    showToast(`Frame ${quickLogTargetFrame} logged`);
-}
-
-// ── GPS ────────────────────────────────────────────────────────────────────
-
-function captureGPS(context, frameNumber) {
-    if (!navigator.geolocation) {
-        showToast('GPS not available on this device');
-        return;
+/* ════════════════ GPS ════════════════ */
+function captureGPS(ctx,frameNum){
+  if(!navigator.geolocation){toast('GPS unavailable');return}
+  toast('Locating…');
+  navigator.geolocation.getCurrentPosition(p=>{
+    const g={lat:p.coords.latitude,lng:p.coords.longitude,accuracy:Math.round(p.coords.accuracy)};
+    if(ctx==='quick'){
+      tempGPS=g;
+      document.getElementById('qGps').textContent=`📍 ${g.lat.toFixed(5)}, ${g.lng.toFixed(5)}  ±${g.accuracy}m`;
+    }else{
+      const f=roll().frames.find(x=>x.number===frameNum);
+      if(f){f.gps=g;save();renderShoot();
+        setTimeout(()=>{const c=document.getElementById('fc'+frameNum);if(c)c.classList.add('open')},40)}
+      toast('GPS captured');
     }
-
-    showToast('Locating...');
-
-    navigator.geolocation.getCurrentPosition(
-        (pos) => {
-            const gps = {
-                lat: pos.coords.latitude,
-                lng: pos.coords.longitude,
-                accuracy: Math.round(pos.coords.accuracy)
-            };
-
-            if (context === 'quick') {
-                tempGPS = gps;
-                document.getElementById('quickGpsStatus').textContent =
-                    `📍 ${gps.lat.toFixed(5)}, ${gps.lng.toFixed(5)} (±${gps.accuracy}m)`;
-            } else if (context === 'frame') {
-                const roll = getActiveRoll();
-                const frame = roll.frames.find(f => f.number === frameNumber);
-                if (frame) {
-                    frame.gps = gps;
-                    saveState();
-                    renderFrames();
-                    setTimeout(() => {
-                        const card = document.getElementById(`frame-${frameNumber}`);
-                        if (card) card.classList.add('open');
-                    }, 50);
-                }
-                showToast('GPS captured');
-            }
-        },
-        (err) => {
-            showToast('Could not get location');
-            console.warn('GPS error:', err);
-        },
-        { enableHighAccuracy: true, timeout: 10000 }
-    );
+  },()=>toast('Could not get location'),{enableHighAccuracy:true,timeout:10000});
 }
 
-// ── ROLLS SCREEN ───────────────────────────────────────────────────────────
+/* ════════════════ ROLL SHEET (new / edit) ════════════════ */
+function openRollSheet(editId){
+  editingRollId=editId||null;
+  const r=editId?state.rolls.find(x=>x.id===editId):null;
+  document.getElementById('rollSheetTitle').textContent=r?'Edit Roll':'Load New Roll';
+  document.getElementById('rollSheetSave').textContent=r?'Save Changes':'Load Roll';
+  const last=state.rolls[state.rolls.length-1];
+  const src=r||{};
+  document.getElementById('rName').value=src.name||'';
+  document.getElementById('rDate').value=src.date||new Date().toISOString().split('T')[0];
+  const fsel=document.getElementById('rFrames');
+  fsel.value=r?String(r.frames.length):'36';
+  if(fsel.value==='')fsel.value='36';
+  fsel.disabled=!!r;
+  document.getElementById('rCamera').value=src.camera||(last?last.camera:'')||'';
+  document.getElementById('rLens').value=src.defaultLens||(last?last.defaultLens:'')||'';
+  document.getElementById('rFL').value=src.defaultFocalLength||(last?last.defaultFocalLength:'')||'';
+  document.getElementById('rStock').value=src.filmStock||'';
+  document.getElementById('rISO').value=src.iso||'';
+  document.getElementById('rEI').value=src.ei||'';
+  document.getElementById('rDev').value=src.devNotes||'';
+  buildRollChips();
+  document.getElementById('rollOv').classList.add('open');
+}
+function buildRollChips(){
+  chipify('rCamChips',state.gear.cameras.map(c=>c.name),document.getElementById('rCamera').value,null,
+    v=>{document.getElementById('rCamera').value=v});
+  chipify('rLensChips',state.gear.lenses.map(l=>l.name),document.getElementById('rLens').value,null,
+    v=>{document.getElementById('rLens').value=v;
+        const g=state.gear.lenses.find(l=>l.name===v);
+        if(g&&g.fl)document.getElementById('rFL').value=g.fl});
+  chipify('rStockChips',state.gear.stocks.map(s=>s.name),document.getElementById('rStock').value,null,
+    v=>{document.getElementById('rStock').value=v;
+        const g=state.gear.stocks.find(s=>s.name===v);
+        if(g&&g.iso)document.getElementById('rISO').value=g.iso});
+}
+function closeRollSheet(){document.getElementById('rollOv').classList.remove('open');editingRollId=null}
+function saveRollSheet(){
+  const name=document.getElementById('rName').value.trim();
+  const camera=document.getElementById('rCamera').value.trim();
+  const stock=document.getElementById('rStock').value.trim();
+  if(!name){toast('Give the roll a name');return}
+  if(!camera){toast('Which camera?');return}
+  if(!stock){toast('Which film stock?');return}
+  const vals={
+    name, date:document.getElementById('rDate').value, camera,
+    defaultLens:document.getElementById('rLens').value.trim(),
+    defaultFocalLength:document.getElementById('rFL').value,
+    filmStock:stock, iso:document.getElementById('rISO').value,
+    ei:document.getElementById('rEI').value, devNotes:document.getElementById('rDev').value.trim()
+  };
+  learnGear('cameras',vals.camera);
+  learnGear('lenses',vals.defaultLens,vals.defaultFocalLength);
+  learnGear('stocks',vals.filmStock,vals.iso);
 
-function renderRolls() {
-    const list = document.getElementById('rollsList');
+  if(editingRollId){
+    Object.assign(state.rolls.find(x=>x.id===editingRollId),vals);
+    toast('Roll updated');
+  }else{
+    const n=parseInt(document.getElementById('rFrames').value)||36;
+    const frames=[];
+    for(let i=1;i<=n;i++)frames.push({number:i,exposed:false,shutter:'',aperture:'',lens:'',focalLength:'',note:'',gps:null,timestamp:null});
+    const newRoll={id:Date.now().toString(),...vals,status:'shooting',frames,createdAt:new Date().toISOString()};
+    state.rolls.push(newRoll);
+    state.activeRollId=newRoll.id;
+    toast('Roll loaded — happy shooting');
+  }
+  save(); closeRollSheet(); go('Shoot');
+}
 
-    if (state.rolls.length === 0) {
-        list.innerHTML = `<div class="empty-state">
-            <div class="empty-state-icon">🎞</div>
-            <div class="empty-state-title">No rolls yet</div>
-            <div class="empty-state-text">Start a new roll to begin logging your exposures.</div>
-        </div>`;
-        return;
-    }
+/* ════════════════ ROLLS SCREEN ════════════════ */
+let rollStatusFilter='all';
+function renderRolls(){
+  const bar=document.getElementById('statusBar');
+  bar.innerHTML='';
+  ['all',...STATUSES].forEach(s=>{
+    const b=document.createElement('button');
+    b.className='fl-fbtn'+(rollStatusFilter===s?' on':'');
+    b.textContent=s==='all'?'All':STATUS_LABEL[s];
+    b.onclick=()=>{rollStatusFilter=s;renderRolls()};
+    bar.appendChild(b);
+  });
+  const q=(document.getElementById('rollSearch').value||'').toLowerCase();
+  const list=document.getElementById('rollsList');
+  list.innerHTML='';
+  let shown=0;
+  [...state.rolls].reverse().forEach(r=>{
+    if(rollStatusFilter!=='all'&&r.status!==rollStatusFilter)return;
+    if(q&&![r.name,r.camera,r.filmStock,r.defaultLens].join(' ').toLowerCase().includes(q))return;
+    shown++;
+    const exp=r.frames.filter(f=>f.exposed).length;
+    const el=document.createElement('div');
+    el.className='roll'+(r.id===state.activeRollId?' activeroll':'');
+    el.innerHTML=`
+      <div class="roll-strip" style="background:${STATUS_COLOR[r.status]}"></div>
+      <div class="roll-body" onclick="activateRoll('${r.id}')">
+        <div class="roll-top">
+          <div style="min-width:0">
+            <div class="roll-name">${esc(r.name)}${r.id===state.activeRollId?' <span style="color:var(--amber);font-size:9px;font-weight:800;letter-spacing:.1em">● ACTIVE</span>':''}</div>
+            <div class="roll-meta">${esc(r.camera)} · ${esc(r.filmStock)} @ ${esc(r.iso)}${r.ei&&r.ei!==r.iso?' → EI '+esc(r.ei):''}<br>${esc(r.date||'')}</div>
+          </div>
+          <span class="status-pill st-${r.status}">${STATUS_LABEL[r.status]}</span>
+        </div>
+        <div class="roll-bar"><div class="roll-fill" style="width:${exp/r.frames.length*100}%"></div></div>
+      </div>
+      <div class="roll-foot">
+        <span class="roll-count"><b>${exp}</b> / ${r.frames.length} frames</span>
+        <div class="roll-acts">
+          <button class="racts" onclick="openRollSheet('${r.id}')">Edit</button>
+          <button class="racts del" onclick="deleteRoll('${r.id}')">Delete</button>
+        </div>
+      </div>`;
+    list.appendChild(el);
+  });
+  if(!shown){
+    list.innerHTML=`<div class="empty"><div class="empty-t">${state.rolls.length?'No matches':'No rolls yet'}</div><div class="empty-x">${state.rolls.length?'Try a different search or filter.':'Load your first roll to get started.'}</div></div>`;
+  }
+}
+function activateRoll(id){state.activeRollId=id;save();go('Shoot');toast('Roll active')}
+function deleteRoll(id){
+  const r=state.rolls.find(x=>x.id===id);
+  confirm_('Delete "'+r.name+'"?',`All ${r.frames.length} frames will be permanently removed. Consider backing up first (Data tab).`,()=>{
+    state.rolls=state.rolls.filter(x=>x.id!==id);
+    if(state.activeRollId===id)state.activeRollId=state.rolls.length?state.rolls[state.rolls.length-1].id:null;
+    save();renderRolls();toast('Roll deleted');
+  });
+}
 
-    list.innerHTML = '';
-    [...state.rolls].reverse().forEach(roll => {
-        const exposed = roll.frames.filter(f => f.exposed).length;
-        const isActive = roll.id === state.activeRollId;
-
-        const item = document.createElement('div');
-        item.className = 'roll-item';
-        item.style.borderColor = isActive ? 'var(--accent)' : '';
-        item.innerHTML = `
-            <div class="roll-item-info" onclick="loadRoll('${roll.id}')" style="flex:1; cursor:pointer;">
-                <div class="roll-item-name">${roll.name}${isActive ? ' <span style="color:var(--accent);font-size:10px;font-weight:700;">● ACTIVE</span>' : ''}</div>
-                <div class="roll-item-meta">${roll.camera} · ${roll.filmStock} · ${roll.date || 'No date'}</div>
-            </div>
-            <div class="roll-item-actions">
-                <div class="roll-item-frames">${exposed}/${roll.frames.length}</div>
-                <button class="delete-btn" onclick="deleteRoll('${roll.id}')">✕</button>
-            </div>
-        `;
-        list.appendChild(item);
+/* ════════════════ GEAR SCREEN ════════════════ */
+function renderGear(){
+  const make=(kind,elId,subFn)=>{
+    const el=document.getElementById(elId);
+    el.innerHTML='';
+    if(!state.gear[kind].length){el.innerHTML='<div style="padding:14px 16px;font-size:12px;color:var(--faint);font-style:italic">Nothing saved yet</div>';return}
+    state.gear[kind].forEach((g,i)=>{
+      const d=document.createElement('div');
+      d.className='gear-item';
+      d.innerHTML=`<div style="min-width:0"><div class="gear-name">${esc(g.name)}</div>${subFn(g)?`<div class="gear-sub">${subFn(g)}</div>`:''}</div>
+        <button class="gear-del" onclick="delGear('${kind}',${i})">✕</button>`;
+      el.appendChild(d);
     });
+  };
+  make('cameras','camList',()=>'' );
+  make('lenses','lensList',g=>g.fl?g.fl+'mm':'');
+  make('stocks','stockList',g=>g.iso?'ISO '+esc(g.iso):'');
+}
+function addGear(kind,inputId){
+  const v=document.getElementById(inputId).value.trim();
+  if(!v)return;
+  learnGear(kind,v);
+  document.getElementById(inputId).value='';
+  save();renderGear();toast('Added');
+}
+function addLensItem(){
+  const n=document.getElementById('addLens').value.trim();
+  const fl=document.getElementById('addLensFL').value;
+  if(!n)return;
+  learnGear('lenses',n,fl);
+  document.getElementById('addLens').value='';document.getElementById('addLensFL').value='';
+  save();renderGear();toast('Lens added');
+}
+function addStockItem(){
+  const n=document.getElementById('addStock').value.trim();
+  const iso=document.getElementById('addStockISO').value;
+  if(!n)return;
+  learnGear('stocks',n,iso);
+  document.getElementById('addStock').value='';document.getElementById('addStockISO').value='';
+  save();renderGear();toast('Stock added');
+}
+function delGear(kind,i){
+  state.gear[kind].splice(i,1);
+  save();renderGear();
 }
 
-function loadRoll(id) {
-    state.activeRollId = id;
-    saveState();
-    renderFrames();
-    updateNavRollName();
-    switchTab('shoot');
-    showToast('Roll loaded');
+/* ════════════════ EXPORT / BACKUP ════════════════ */
+function renderMore(){
+  const sel=document.getElementById('expRoll');
+  sel.innerHTML=state.rolls.length
+    ?[...state.rolls].reverse().map(r=>`<option value="${r.id}" ${r.id===state.activeRollId?'selected':''}>${esc(r.name)}</option>`).join('')
+    :'<option value="">No rolls</option>';
+  const totalFrames=state.rolls.reduce((a,r)=>a+r.frames.filter(f=>f.exposed).length,0);
+  document.getElementById('aboutBox').innerHTML=
+    `Film Log v${APP_VERSION}<br>${state.rolls.length} roll${state.rolls.length===1?'':'s'} · ${totalFrames} frames logged<br>All data stored locally on this device`;
 }
-
-function deleteRoll(id) {
-    const roll = state.rolls.find(r => r.id === id);
-    showConfirm(
-        'Delete roll?',
-        `"${roll.name}" and all ${roll.frames.length} frames will be permanently deleted.`,
-        () => {
-            state.rolls = state.rolls.filter(r => r.id !== id);
-            if (state.activeRollId === id) {
-                state.activeRollId = state.rolls.length > 0 ? state.rolls[state.rolls.length - 1].id : null;
-            }
-            saveState();
-            renderRolls();
-            updateNavRollName();
-            showToast('Roll deleted');
-        }
-    );
+function expRoll(){return state.rolls.find(r=>r.id===document.getElementById('expRoll').value)}
+function exportJSON(){
+  const r=expRoll(); if(!r){toast('No roll selected');return}
+  const data={exportedBy:'Film Log',appVersion:APP_VERSION,exportedAt:new Date().toISOString(),
+    roll:{name:r.name,date:r.date,camera:r.camera,filmStock:r.filmStock,iso:r.iso,ei:r.ei||null,devNotes:r.devNotes||null,status:r.status,
+      defaultLens:r.defaultLens,defaultFocalLength:r.defaultFocalLength,
+      frames:r.frames.map(f=>({frame:f.number,exposed:f.exposed,shutter:f.shutter||null,aperture:f.aperture||null,
+        lens:f.lens||r.defaultLens||null,focalLength:f.focalLength||r.defaultFocalLength||null,
+        note:f.note||null,gps:f.gps||null,timestamp:f.timestamp||null}))}};
+  dl(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),slug(r.name)+'_log.json');
+  toast('JSON exported');
 }
-
-// ── EXPORT ─────────────────────────────────────────────────────────────────
-
-function updateExportInfo() {
-    const picker = document.getElementById('exportRollPicker');
-    const roll = state.rolls.find(r => r.id === picker.value);
-    if (roll) {
-        const exposed = roll.frames.filter(f => f.exposed).length;
-        document.getElementById('exportRollInfo').textContent =
-            `${roll.name} · ${roll.camera} · ${exposed} exposed frames`;
-    }
+function exportCSV(){
+  const r=expRoll(); if(!r){toast('No roll selected');return}
+  const head=['Frame','Exposed','Camera','Lens','Focal Length (mm)','Film Stock','ISO','EI','Shutter Speed','Aperture','Notes','GPS Lat','GPS Lng','Timestamp'];
+  const rows=r.frames.map(f=>[f.number,f.exposed?'Yes':'No',r.camera,f.lens||r.defaultLens||'',f.focalLength||r.defaultFocalLength||'',
+    r.filmStock,r.iso,r.ei||'',f.shutter||'',f.aperture?'f/'+f.aperture:'',f.note||'',
+    f.gps?f.gps.lat.toFixed(6):'',f.gps?f.gps.lng.toFixed(6):'',f.timestamp||'']);
+  const csv=[head,...rows].map(row=>row.map(c=>`"${String(c).replace(/"/g,'""')}"`).join(',')).join('\n');
+  dl(new Blob([csv],{type:'text/csv'}),slug(r.name)+'_log.csv');
+  toast('CSV exported');
 }
-
-function renderExport() {
-    if (state.rolls.length === 0) {
-        document.getElementById('exportRollInfo').textContent = 'No rolls to export yet.';
-        document.getElementById('exportRollSelect').style.display = 'none';
-        return;
-    }
-
-    if (state.rolls.length > 1) {
-        document.getElementById('exportRollSelect').style.display = 'block';
-        const picker = document.getElementById('exportRollPicker');
-        picker.innerHTML = state.rolls.map(r =>
-            `<option value="${r.id}" ${r.id === state.activeRollId ? 'selected' : ''}>${r.name}</option>`
-        ).join('');
-        updateExportInfo();
-    } else {
-        document.getElementById('exportRollSelect').style.display = 'none';
-        updateExportInfo();
-    }
+function backupAll(){
+  dl(new Blob([JSON.stringify({filmLogBackup:true,appVersion:APP_VERSION,exportedAt:new Date().toISOString(),state}, null,1)],{type:'application/json'}),
+     'filmlog_backup_'+new Date().toISOString().split('T')[0]+'.json');
+  toast('Backup downloaded');
 }
-
-function getExportRoll() {
-    if (state.rolls.length === 1) return state.rolls[0];
-    const picker = document.getElementById('exportRollPicker');
-    return state.rolls.find(r => r.id === picker.value) || getActiveRoll();
+function restoreAll(input){
+  const file=input.files[0]; if(!file)return;
+  const reader=new FileReader();
+  reader.onload=e=>{
+    try{
+      const data=JSON.parse(e.target.result);
+      if(!data.filmLogBackup||!data.state)throw new Error('Not a Film Log backup');
+      confirm_('Restore backup?',`This replaces everything on this device with the backup from ${data.exportedAt?data.exportedAt.split('T')[0]:'unknown date'} (${(data.state.rolls||[]).length} rolls).`,()=>{
+        state=data.state; save();
+        go('Shoot'); toast('Backup restored');
+      },'ok','Restore');
+    }catch(err){toast('⚠ Invalid backup file')}
+    input.value='';
+  };
+  reader.readAsText(file);
 }
-
-function exportJSON() {
-    const roll = getExportRoll();
-    if (!roll) { showToast('No roll to export'); return; }
-
-    const data = {
-        exportedBy: 'Film Log',
-        exportedAt: new Date().toISOString(),
-        roll: {
-            name: roll.name,
-            date: roll.date,
-            camera: roll.camera,
-            filmStock: roll.filmStock,
-            iso: roll.iso,
-            defaultLens: roll.defaultLens,
-            defaultFocalLength: roll.defaultFocalLength,
-            frames: roll.frames.map(f => ({
-                frame: f.number,
-                exposed: f.exposed,
-                shutter: f.shutter || null,
-                aperture: f.aperture || null,
-                lens: f.lens || roll.defaultLens || null,
-                focalLength: f.focalLength || roll.defaultFocalLength || null,
-                note: f.note || null,
-                gps: f.gps || null,
-                timestamp: f.timestamp || null
-            }))
-        }
-    };
-
-    const blob = new Blob([JSON.stringify(data, null, 2)], {type: 'application/json'});
-    downloadBlob(blob, `${roll.name.replace(/\s+/g,'_')}_log.json`);
-    showToast('JSON exported');
+function dl(blob,name){
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download=name;a.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1500);
 }
+const slug=s=>s.replace(/[^\w\- ]+/g,'').trim().replace(/\s+/g,'_')||'roll';
 
-function exportCSV() {
-    const roll = getExportRoll();
-    if (!roll) { showToast('No roll to export'); return; }
-
-    const headers = ['Frame','Exposed','Camera','Lens','Focal Length (mm)','Film Stock','ISO','Shutter Speed','Aperture','Notes','GPS Lat','GPS Lng','Timestamp'];
-    const rows = roll.frames.map(f => [
-        f.number,
-        f.exposed ? 'Yes' : 'No',
-        roll.camera,
-        f.lens || roll.defaultLens || '',
-        f.focalLength || roll.defaultFocalLength || '',
-        roll.filmStock,
-        roll.iso,
-        f.shutter || '',
-        f.aperture ? `f/${f.aperture}` : '',
-        f.note || '',
-        f.gps ? f.gps.lat.toFixed(6) : '',
-        f.gps ? f.gps.lng.toFixed(6) : '',
-        f.timestamp || ''
-    ]);
-
-    const csv = [headers, ...rows]
-        .map(row => row.map(cell => `"${String(cell).replace(/"/g,'""')}"`).join(','))
-        .join('\n');
-
-    const blob = new Blob([csv], {type: 'text/csv'});
-    downloadBlob(blob, `${roll.name.replace(/\s+/g,'_')}_log.csv`);
-    showToast('CSV exported');
+/* ════════════════ UI HELPERS ════════════════ */
+let toastTimer=null;
+function toast(msg){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),1900);
 }
-
-function downloadBlob(blob, filename) {
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
+function confirm_(title,text,cb,style,okLabel){
+  document.getElementById('confT').textContent=title;
+  document.getElementById('confX').textContent=text;
+  const ok=document.getElementById('confOk');
+  ok.className='conf-b '+(style==='ok'?'ok':'danger');
+  ok.textContent=okLabel||'Delete';
+  document.getElementById('confOv').classList.add('open');
+  confirmCb=cb;
+  ok.onclick=()=>{closeConf();if(confirmCb)confirmCb()};
 }
+function closeConf(){document.getElementById('confOv').classList.remove('open');confirmCb=null}
 
-// ── UI HELPERS ─────────────────────────────────────────────────────────────
-
-function switchTab(tab) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.getElementById(`tab${tab.charAt(0).toUpperCase() + tab.slice(1)}`).classList.add('active');
-
-    if (tab === 'shoot') {
-        const roll = getActiveRoll();
-        if (roll) {
-            document.getElementById('screenSetup').classList.remove('active');
-            document.getElementById('screenFrames').classList.add('active');
-        } else {
-            document.getElementById('screenSetup').classList.add('active');
-            document.getElementById('screenFrames').classList.remove('active');
-        }
-        document.getElementById('screenRolls').classList.remove('active');
-        document.getElementById('screenExport').classList.remove('active');
-    } else if (tab === 'rolls') {
-        document.getElementById('screenSetup').classList.remove('active');
-        document.getElementById('screenFrames').classList.remove('active');
-        document.getElementById('screenRolls').classList.add('active');
-        document.getElementById('screenExport').classList.remove('active');
-        renderRolls();
-    } else if (tab === 'export') {
-        document.getElementById('screenSetup').classList.remove('active');
-        document.getElementById('screenFrames').classList.remove('active');
-        document.getElementById('screenRolls').classList.remove('active');
-        document.getElementById('screenExport').classList.add('active');
-        renderExport();
-    }
-}
-
-function updateNavRollName() {
-    const roll = getActiveRoll();
-    document.getElementById('navRollName').textContent = roll ? roll.name : 'No roll loaded';
-}
-
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2000);
-}
-
-function showConfirm(title, text, onConfirm) {
-    document.getElementById('confirmTitle').textContent = title;
-    document.getElementById('confirmText').textContent = text;
-    document.getElementById('confirmOverlay').classList.add('open');
-    confirmCallback = onConfirm;
-    document.getElementById('confirmOkBtn').onclick = () => {
-        closeConfirm();
-        if (confirmCallback) confirmCallback();
-    };
-}
-
-function closeConfirm() {
-    document.getElementById('confirmOverlay').classList.remove('open');
-    confirmCallback = null;
-}
-
-// ── INIT ───────────────────────────────────────────────────────────────────
-
-loadState();
-updateNavRollName();
-
-if (getActiveRoll()) {
-    renderFrames();
-    document.getElementById('screenSetup').classList.remove('active');
-    document.getElementById('screenFrames').classList.add('active');
-} else {
-    document.getElementById('setupDate').value = new Date().toISOString().split('T')[0];
+/* ════════════════ INIT ════════════════ */
+load();
+save();           // persist migrated structure immediately
+renderShoot();
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
 }
 </script>
 </body>
